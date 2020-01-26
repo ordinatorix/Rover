@@ -14,6 +14,7 @@ import base64
 # import picamera
 # from picamera.array import PiRGBArray
 import argparse
+from imutils import VideoStream
 import imutils
 from collections import deque
 import psutil
@@ -79,8 +80,8 @@ class FPV:
 
         camera = cv2.VideoCapture(0)
         # camera = picamera.PiCamera() 
-        camera.resolution = (640, 480)
-        camera.framerate = 20
+        # camera.resolution = (640, 480)
+        # camera.framerate = 20
         rawCapture = PiRGBArray(camera, size=(640, 480))
 
         # context = zmq.Context()
