@@ -82,7 +82,7 @@ class FPV:
         # camera = picamera.PiCamera() 
         # camera.resolution = (640, 480)
         # camera.framerate = 20
-        rawCapture = PiRGBArray(camera, size=(640, 480))
+        # rawCapture = PiRGBArray(camera, size=(640, 480))
 
         # context = zmq.Context()
         # footage_socket = context.socket(zmq.PUB)
