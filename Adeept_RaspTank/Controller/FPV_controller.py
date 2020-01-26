@@ -122,13 +122,14 @@ class FPV:
 
                     if Y < (240-tor):
                         error = (240-Y)/5
-                        outv = int(round((pid.GenOut(error)),0))
-                        servo.camera_ang('lookup',outv)
+                        # outv = int(round((pid.GenOut(error)),0))
+                        print(error)
+                        # servo.camera_ang('lookup',outv)
                         Y_lock = 0
                     elif Y > (240+tor):
                         error = (Y-240)/5
-                        outv = int(round((pid.GenOut(error)),0))
-                        print(outv)
+                        # outv = int(round((pid.GenOut(error)),0))
+                        print(error)
                         # servo.camera_ang('lookdown',outv)
                         Y_lock = 0
                     else:
@@ -146,22 +147,28 @@ class FPV:
                         #move.motorStop()
                         X_lock = 0
                     else:
-                        move.motorStop()
+                        print('move.motorStop()')
+                        # move.motorStop()
                         X_lock = 1
 
                     if X_lock == 1 and Y_lock == 1:
                         if UltraData > 0.5:
-                            move.move(70, 'forward', 'no', 0.6)
+                            # move.move(70, 'forward', 'no', 0.6)
+                            print('move.move()')
                         elif UltraData < 0.4:
-                            move.move(70, 'backward', 'no', 0.6)
+                            # move.move(70, 'backward', 'no', 0.6)
+                            print('move.move()')
                             print(UltraData)
                         else:
-                            move.motorStop()
+                            # move.motorStop()
+                            print('move.motorStop()')
                     
 
                 else:
                     cv2.putText(frame_image,'Target Detecting',(40,60), font, 0.5,(255,255,255),1,cv2.LINE_AA)
-                    move.motorStop()
+                    # move.motorStop()
+                    print('move.motorStop()')
+
 
                 for i in range(1, len(pts)):
                     if pts[i - 1] is None or pts[i] is None:
@@ -207,12 +214,14 @@ class FPV:
                     text = "Occupied"
                     motionCounter += 1
                     #print(motionCounter)
-                    #print(text)
-                    LED.colorWipe(Color(255,16,0))
+                    print(text)
+                    print('LED.Colorwipe')
+                    # LED.colorWipe(Color(255,16,0))
                     lastMovtionCaptured = timestamp
 
                 if (timestamp - lastMovtionCaptured).seconds >= 0.5:
-                    LED.colorWipe(Color(255,255,0))
+                    # LED.colorWipe(Color(255,255,0))
+                    print('LED.Colorwipe')
 
 
             encoded, buffer = cv2.imencode('.jpg', frame_image)
