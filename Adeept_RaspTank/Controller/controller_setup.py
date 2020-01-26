@@ -137,4 +137,4 @@ os.system("sudo cp -f //home/pi/Documents/Rover/Adeept_Rasptank/server/config.tx
 os.system("sudo cp -f //home/pi/Documents/Rover/Adeept_Rasptank/server/config.txt //config.txt")
 print('restarting')
 
-os.system("sudo reboot")
+# os.system("sudo reboot")
