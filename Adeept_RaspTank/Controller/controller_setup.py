@@ -91,7 +91,7 @@ for x in range(1,4):
 		break
 '''
 for x in range(1,4):
-	if os.system("sudo pip3 install imutils zmq pybase64 psutil") == 0:   ####
+	if os.system("sudo pip3 install imutils pyzmq pybase64 psutil") == 0:   ####
 		break
 
 for x in range(1,4):
@@ -120,16 +120,16 @@ try:
 except:
 	pass
 '''
-try:
-	os.system('sudo touch //home/pi/startup.sh')
-	with open("//home/pi/startup.sh",'w') as file_to_write:
-		file_to_write.write("#!/bin/sh\n#sleep 10s\nsudo python3 //home/pi/Documents/Rover/Adeept_Rasptank/server/server.py")
-except:
-	pass
+# try:
+# 	os.system('sudo touch //home/pi/startup.sh')
+# 	with open("//home/pi/startup.sh",'w') as file_to_write:
+# 		file_to_write.write("#!/bin/sh\n#sleep 10s\nsudo python3 //home/pi/Documents/Rover/Adeept_Rasptank/server/server.py")
+# except:
+# 	pass
 
-os.system('sudo chmod 777 //home/pi/startup.sh')
+# os.system('sudo chmod 777 //home/pi/startup.sh')
 
-replace_num('/etc/rc.local','fi','fi\n//home/pi/startup.sh start')
+# replace_num('/etc/rc.local','fi','fi\n//home/pi/startup.sh start')
 
 os.system("sudo cp -f //home/pi/Documents/Rover/Adeept_Rasptank/server/config.txt //home/pi/config.txt")
 
