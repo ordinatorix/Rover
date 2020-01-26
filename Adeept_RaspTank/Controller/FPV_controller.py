@@ -14,7 +14,7 @@ import base64
 # import picamera
 # from picamera.array import PiRGBArray
 import argparse
-from imutils import VideoStream
+from imutils.video import VideoStream
 import imutils
 from collections import deque
 import psutil
