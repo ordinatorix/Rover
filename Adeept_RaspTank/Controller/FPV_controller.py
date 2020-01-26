@@ -25,17 +25,17 @@ import datetime
 # from rpi_ws281x import *
 # import move
 
-pid = PID.PID()
-pid.SetKp(0.5)
-pid.SetKd(0)
-pid.SetKi(0)
+# pid = PID.PID()
+# pid.SetKp(0.5)
+# pid.SetKd(0)
+# pid.SetKi(0)
 Y_lock = 0
 X_lock = 0
 tor    = 17
 FindColorMode = 0
 WatchDogMode  = 0
 UltraData = 3
-LED  = LED.LED()
+# LED  = LED.LED()
 
 class FPV: 
     def __init__(self):
