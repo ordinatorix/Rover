@@ -11,8 +11,8 @@ import threading
 import cv2
 # import zmq
 import base64
-import picamera
-from picamera.array import PiRGBArray
+# import picamera
+# from picamera.array import PiRGBArray
 import argparse
 import imutils
 from collections import deque
@@ -77,7 +77,8 @@ class FPV:
 
         font = cv2.FONT_HERSHEY_SIMPLEX
 
-        camera = picamera.PiCamera() 
+        camera = cv2.VideoCapture(0)
+        # camera = picamera.PiCamera() 
         camera.resolution = (640, 480)
         camera.framerate = 20
         rawCapture = PiRGBArray(camera, size=(640, 480))
