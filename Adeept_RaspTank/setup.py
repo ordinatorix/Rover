@@ -129,17 +129,19 @@ print('This repo is used to create an wifi access point on the Rover')
 for x in range(1,4):
 	if os.system("git clone https://github.com/oblique/create_ap") == 0:
 		break
-
+print('creating access point.')
 try:
 	os.system("cd //home/pi/development/Rover/Adeept_RaspTank/create_ap && sudo make install")
 except:
 	pass
 
+print('creating access point in home dir instead.')
 try:
 	os.system("cd //home/pi/create_ap && sudo make install")
 except:
 	pass
 
+print('installing some networking packages.')
 for x in range(1,4):
 	if os.system("sudo apt-get install -y util-linux procps hostapd iproute2 iw haveged dnsmasq") == 0:
 		break
