@@ -163,7 +163,7 @@ except:
 
 os.system('sudo chmod 777 //home/pi/startup.sh')
 
-# replace_num('/etc/rc.local','fi','fi\n//home/pi/startup.sh start')
+replace_num('/etc/rc.local','fi','fi\n//home/pi/startup.sh start')
 
 os.system("sudo cp -f //home/pi/development/Rover/Adeept_RaspTank/server/config.txt //home/pi/config.txt")
 
