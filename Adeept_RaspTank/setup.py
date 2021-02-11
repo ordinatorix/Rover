@@ -38,6 +38,10 @@ for x in range(1,4):
 		break
 
 for x in range(1,4):
+	if os.system("sudo apt-get install -y python3-rpi.gpio") == 0:
+		break		
+
+for x in range(1,4):
 	if os.system("sudo pip3 install adafruit-pca9685") == 0:
 		break
 
