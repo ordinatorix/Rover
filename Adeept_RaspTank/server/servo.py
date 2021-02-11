@@ -26,6 +26,7 @@ def num_import_int(initial):		#Call this function to import data from '.txt' fil
 				r=line
 	begin=len(list(initial))
 	snum=r[begin:]
+	print(snum)
 	n=int(snum)
 	return n
 
