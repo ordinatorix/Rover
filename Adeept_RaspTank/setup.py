@@ -69,20 +69,23 @@ for x in range(1,4):
 	if os.system("sudo pip3 install rpi_ws281x") == 0:
 		break
 
+print('updating boot config file')
 try:
 	replace_num("/boot/config.txt",'#dtparam=i2c_arm=on','dtparam=i2c_arm=on\nstart_x=1\ndtparam=i2c1=on\n')
 except:
 	print('try again')
 
-
+print('updating pip')
 for x in range(1,4):
 	if os.system("sudo pip3 install -U pip") == 0:
 		break
 
+print('installing numpy')
 for x in range(1,4):
 	if os.system("sudo pip3 install numpy") == 0:
 		break
 
+print('installing opencv')
 for x in range(1,4):
 	if os.system("sudo apt-get install -y libopencv-dev python3-opencv") == 0:
 		break
@@ -115,10 +118,14 @@ for x in range(1,4):
 	if os.system("sudo apt-get install -y libqtgui4 python3-pyqt5 libqt4-test") == 0:
 		break
 '''
+
+print('installing imutils; zmq; pybase64; psutil')
 for x in range(1,4):
 	if os.system("sudo pip3 install imutils zmq pybase64 psutil") == 0:   ####
 		break
 
+print('clonning oblique repo.')
+print('This repo is used to create an wifi access point on the Rover')
 for x in range(1,4):
 	if os.system("git clone https://github.com/oblique/create_ap") == 0:
 		break
