@@ -34,12 +34,27 @@ for x in range(1,4):
 		break
 '''
 for x in range(1,4):
-	if os.system("sudo apt-get install -y i2c-tools") == 0:
+	if os.system("sudo apt-get -y update") == 0:
+		break
+
+for x in range(1,4):
+	if os.system("sudo apt-get -y upgrade") == 0:
 		break
 
 for x in range(1,4):
 	if os.system("sudo apt-get install -y python3-rpi.gpio") == 0:
+		break
+
+for x in range(1,4):
+	if os.system("sudo apt-get install -y python3-pip") == 0:
 		break		
+
+
+for x in range(1,4):
+	if os.system("sudo apt-get install -y i2c-tools") == 0:
+		break
+
+		
 
 for x in range(1,4):
 	if os.system("sudo pip3 install adafruit-pca9685") == 0:
@@ -127,7 +142,7 @@ except:
 try:
 	os.system('sudo touch //home/pi/startup.sh')
 	with open("//home/pi/startup.sh",'w') as file_to_write:
-		file_to_write.write("#!/bin/sh\n#sleep 10s\nsudo python3 //home/pi/Documents/Rover/Adeept_Rasptank/server/server.py")
+		file_to_write.write("#!/bin/sh\n#sleep 10s\nsudo python3 //home/pi/development/Rover/Adeept_Rasptank/server/server.py")
 except:
 	pass
 
