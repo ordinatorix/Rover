@@ -33,6 +33,7 @@ for x in range(1,4):
 	if os.system("sudo apt-get -y upgrade") == 0:
 		break
 '''
+print('updating and upgrading')
 for x in range(1,4):
 	if os.system("sudo apt-get -y update") == 0:
 		break
@@ -41,33 +42,38 @@ for x in range(1,4):
 	if os.system("sudo apt-get -y upgrade") == 0:
 		break
 
+print('installing gpio')
 for x in range(1,4):
 	if os.system("sudo apt-get install -y python3-rpi.gpio") == 0:
 		break
 
+
+print('installing pip')
 for x in range(1,4):
 	if os.system("sudo apt-get install -y python3-pip") == 0:
 		break		
 
-
+print('installing i2c-tools')
 for x in range(1,4):
 	if os.system("sudo apt-get install -y i2c-tools") == 0:
 		break
 
 		
-
+print('installing adafruit-pca9685')
 for x in range(1,4):
 	if os.system("sudo pip3 install adafruit-pca9685") == 0:
 		break
 
+print('installing rpi_ws281x')
 for x in range(1,4):
 	if os.system("sudo pip3 install rpi_ws281x") == 0:
 		break
 
 try:
-	replace_num("/boot/config.txt",'#dtparam=i2c_arm=on','dtparam=i2c_arm=on\nstart_x=1\n')
+	replace_num("/boot/config.txt",'#dtparam=i2c_arm=on','dtparam=i2c_arm=on\nstart_x=1\ndtparam=i2c1=on\n')
 except:
 	print('try again')
+
 
 for x in range(1,4):
 	if os.system("sudo pip3 install -U pip") == 0:
@@ -148,7 +154,7 @@ except:
 
 os.system('sudo chmod 777 //home/pi/startup.sh')
 
-replace_num('/etc/rc.local','fi','fi\n//home/pi/startup.sh start')
+# replace_num('/etc/rc.local','fi','fi\n//home/pi/startup.sh start')
 
 os.system("sudo cp -f //home/pi/development/Rover/Adeept_Rasptank/server/config.txt //home/pi/config.txt")
 
