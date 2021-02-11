@@ -26,13 +26,13 @@ def num_import_int(initial):		#Call this function to import data from '.txt' fil
 				r=line
 	begin=len(list(initial))
 	snum=r[begin:]
-	print(snum)
+	# print(snum)
 	n=int(snum)
 	return n
 
 print('Loading...')
 for i in range(0,16):
-	print(i)
+	# print(i)
 	exec('L%d_MAX=num_import_int("L%d_MAX:")'%(i,i))
 	exec('L%d_MIN=num_import_int("L%d_MIN:")'%(i,i))
 	for n in range(1,11):
