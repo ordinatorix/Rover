@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 # File name   : servo.py
 # Description : Control Motor
-# Product     : RaspTank  
-# Website     : www.adeept.com
-# E-mail      : support@adeept.com
 # Author      : William
-# Date        : 2018/12/27
+# Edited	  : seb3n
+# Date        : 2021/02/12
 #scp ../server/servo.py pi@192.168.0.13:/home/pi/adeept_rasptank/server/servo.py
 
 from __future__ import division
@@ -175,7 +173,7 @@ if __name__ == '__main__':
 					print('MIN')
 					OUT = 1
 			catch(pos_input)
-			print(pos_input)
+			# print(pos_input)
 
 			pass
 	except KeyboardInterrupt:

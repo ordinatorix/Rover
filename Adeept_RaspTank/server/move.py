@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 # File name   : move.py
 # Description : Control Motor
-# Product     : RaspTank  
-# Website     : www.adeept.com
-# E-mail      : support@adeept.com
 # Author      : William
-# Date        : 2018/12/27
+# Edited	  : seb3n
+# Date        : 2021/02/12
 import time
 import RPi.GPIO as GPIO
 
