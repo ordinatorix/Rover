@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 # File name   : setup.py
 # Description : install the software for RPi 
-# Website     : www.adeept.com
-# E-mail      : support@adeept.com
 # Author      : William
-# Date        : 2018/10/12
+# Edited	  : seb3n
+# Date        : 2021/02/12
 
 import os
 import time
@@ -47,6 +46,10 @@ for x in range(1,4):
 	if os.system("sudo apt-get install -y python3-rpi.gpio") == 0:
 		break
 
+print('installing picamera')
+for x in range(1,4):
+	if os.system("sudo apt-get install -y python3-picamera") == 0:
+		break	
 
 print('installing pip')
 for x in range(1,4):
