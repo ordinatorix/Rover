@@ -143,7 +143,7 @@ for x in range(1,4):
 		break
 print('creating access point.')
 try:
-	os.system("cd //home/pi/development/Rover/Adeept_RaspTank/create_ap && sudo make install")
+	os.system("cd //home/pi/development/Rover/create_ap && sudo make install")
 except:
 	pass
 
@@ -163,7 +163,7 @@ try:
 	os.system('sudo mkdir //home/pi/.config/autostart')
 	os.system('sudo touch //home/pi/.config/autostart/car.desktop')
 	with open("//home/pi/.config/autostart/car.desktop",'w') as file_to_write:
-		file_to_write.write("[Desktop Entry]\n   Name=Car\n   Comment=Car\n   Exec=sudo python3 //home/pi/development/Rover/Adeept_RaspTank/server/server.py\n   Icon=false\n   Terminal=false\n   MutipleArgs=false\n   Type=Application\n   Catagories=Application;Development;\n   StartupNotify=true")
+		file_to_write.write("[Desktop Entry]\n   Name=Car\n   Comment=Car\n   Exec=sudo python3 //home/pi/development/Rover/server/server.py\n   Icon=false\n   Terminal=false\n   MutipleArgs=false\n   Type=Application\n   Catagories=Application;Development;\n   StartupNotify=true")
 except:
 	pass
 '''
@@ -172,7 +172,7 @@ except:
 try:
 	os.system('sudo touch //home/pi/startup.sh')
 	with open("//home/pi/startup.sh",'w') as file_to_write:
-		file_to_write.write("#!/bin/sh\n#sleep 10s\nsudo python3 //home/pi/development/Rover/Adeept_RaspTank/server/server.py")
+		file_to_write.write("#!/bin/sh\n#sleep 10s\nsudo python3 //home/pi/development/Rover/server/server.py")
 except:
 	pass
 # Change startup file permission
@@ -180,10 +180,10 @@ os.system('sudo chmod 777 //home/pi/startup.sh')
 
 replace_num('/etc/rc.local','fi','fi\n//home/pi/startup.sh start')
 
-os.system("sudo cp -f //home/pi/development/Rover/Adeept_RaspTank/server/config.txt //home/pi/config.txt")
+os.system("sudo cp -f //home/pi/development/Rover/server/config.txt //home/pi/config.txt")
 
-os.system("sudo cp -f //home/pi/development/Rover/Adeept_RaspTank/server/config.txt //etc/config.txt")
-os.system("sudo cp -f //home/pi/development/Rover/Adeept_RaspTank/server/config.txt //config.txt")
+os.system("sudo cp -f //home/pi/development/Rover/server/config.txt //etc/config.txt")
+os.system("sudo cp -f //home/pi/development/Rover/server/config.txt //config.txt")
 print('restarting')
 
 os.system("sudo reboot")

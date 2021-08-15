@@ -4,7 +4,7 @@
 # Author      : William
 # Edited	  : seb3n
 # Date        : 2021/02/12
-#scp ../server/servo.py pi@192.168.0.13:/home/pi/adeept_rasptank/server/servo.py
+#scp ../server/servo.py pi@192.168.0.13:/home/pi/server/servo.py
 
 from __future__ import division
 import time

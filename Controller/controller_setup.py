@@ -115,7 +115,7 @@ for x in range(1,4):
 		break
 
 try:
-	os.system("cd //home/pi/Documents/Rover/Adeept_Rasptank/create_ap &&  make install")
+	os.system("cd //home/pi/Documents/Rover/create_ap &&  make install")
 except:
 	pass
 
@@ -129,10 +129,10 @@ for x in range(1,4):
 		break
 
 
-os.system("sudo cp -f //home/pi/Documents/Rover/Adeept_Rasptank/server/config.txt //home/pi/config.txt")
+os.system("sudo cp -f //home/pi/Documents/Rover/server/config.txt //home/pi/config.txt")
 
-os.system("sudo cp -f //home/pi/Documents/Rover/Adeept_Rasptank/server/config.txt //etc/config.txt")
-os.system("sudo cp -f //home/pi/Documents/Rover/Adeept_Rasptank/server/config.txt //config.txt")
+os.system("sudo cp -f //home/pi/Documents/Rover/server/config.txt //etc/config.txt")
+os.system("sudo cp -f //home/pi/Documents/Rover/server/config.txt //config.txt")
 print('restarting')
 
 # os.system("sudo reboot")
