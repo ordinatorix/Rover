@@ -2,10 +2,9 @@
 # -*- coding: UTF-8 -*-
 # File name   : controller.py
 # Description : controller  
-# Website     : www.adeept.com
-# E-mail      : support@adeept.com
 # Author      : William
-# Date        : 2018/08/22
+# Editor      : Seb3n
+# Date        : 2021/08/15
 
 from socket import *
 import sys

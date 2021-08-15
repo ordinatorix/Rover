@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # File name   : setup.py
-# Description : install the software for RPi 
+# Description : Install the software for Rover
 # Author      : William
 # Edited	  : seb3n
 # Date        : 2021/02/12
@@ -18,7 +18,8 @@ def replace_num(file,initial,new_num):
             newline += line
     with open(file,"w") as f:
         f.writelines(newline)
-'''
+
+# update and remove any unnecessary software.
 for x in range(1,4):
 	if os.system("sudo apt-get update") == 0:
 		break
@@ -31,63 +32,71 @@ os.system("sudo apt-get -y autoremove")
 for x in range(1,4):
 	if os.system("sudo apt-get -y upgrade") == 0:
 		break
-'''
-print('updating and upgrading')
-for x in range(1,4):
-	if os.system("sudo apt-get -y update") == 0:
-		break
 
-for x in range(1,4):
-	if os.system("sudo apt-get -y upgrade") == 0:
-		break
+# print('updating and upgrading')
+# for x in range(1,4):
+# 	if os.system("sudo apt-get -y update") == 0:
+# 		break
 
+# for x in range(1,4):
+# 	if os.system("sudo apt-get -y upgrade") == 0:
+# 		break
+
+# install gpio support
 print('installing gpio')
 for x in range(1,4):
 	if os.system("sudo apt-get install -y python3-rpi.gpio") == 0:
 		break
-
+# install picamera support	
 print('installing picamera')
 for x in range(1,4):
 	if os.system("sudo apt-get install -y python3-picamera") == 0:
 		break	
 
+# install pip
 print('installing pip')
 for x in range(1,4):
 	if os.system("sudo apt-get install -y python3-pip") == 0:
 		break		
-
+	
+# install I2C tools
 print('installing i2c-tools')
 for x in range(1,4):
 	if os.system("sudo apt-get install -y i2c-tools") == 0:
 		break
 
-		
+# install support for adafruit pca9685 led lights		
 print('installing adafruit-pca9685')
 for x in range(1,4):
 	if os.system("sudo pip3 install adafruit-pca9685") == 0:
 		break
 
+# install support for ws281x
 print('installing rpi_ws281x')
 for x in range(1,4):
 	if os.system("sudo pip3 install rpi_ws281x") == 0:
 		break
 
+# update boot config file to allow i2c
 print('updating boot config file')
 try:
 	replace_num("/boot/config.txt",'#dtparam=i2c_arm=on','dtparam=i2c_arm=on\nstart_x=1\ndtparam=i2c1=on\n')
 except:
 	print('try again')
 
+#update pip 
 print('updating pip')
 for x in range(1,4):
 	if os.system("sudo pip3 install -U pip") == 0:
 		break
 
+# install numpy
 print('installing numpy')
 for x in range(1,4):
 	if os.system("sudo pip3 install numpy") == 0:
 		break
 
+# install opencv
 print('installing opencv')
 for x in range(1,4):
 	if os.system("sudo apt-get install -y libopencv-dev python3-opencv") == 0:
@@ -121,12 +130,12 @@ for x in range(1,4):
 	if os.system("sudo apt-get install -y libqtgui4 python3-pyqt5 libqt4-test") == 0:
 		break
 '''
-
+# install imutil, zmq, pybase64, psutil
 print('installing imutils; zmq; pybase64; psutil')
 for x in range(1,4):
 	if os.system("sudo pip3 install imutils zmq pybase64 psutil") == 0:   ####
 		break
-
+# install support for local wifi access point and create access point.
 print('clonning oblique repo.')
 print('This repo is used to create an wifi access point on the Rover')
 for x in range(1,4):
@@ -144,6 +153,7 @@ try:
 except:
 	pass
 
+# install some networking packages
 print('installing some networking packages.')
 for x in range(1,4):
 	if os.system("sudo apt-get install -y util-linux procps hostapd iproute2 iw haveged dnsmasq") == 0:
@@ -157,13 +167,15 @@ try:
 except:
 	pass
 '''
+# Create startup file.
+# This file will be run on startup and have Rover awaiting connection.
 try:
 	os.system('sudo touch //home/pi/startup.sh')
 	with open("//home/pi/startup.sh",'w') as file_to_write:
 		file_to_write.write("#!/bin/sh\n#sleep 10s\nsudo python3 //home/pi/development/Rover/Adeept_RaspTank/server/server.py")
 except:
 	pass
-
+# Change startup file permission
 os.system('sudo chmod 777 //home/pi/startup.sh')
 
 replace_num('/etc/rc.local','fi','fi\n//home/pi/startup.sh start')
