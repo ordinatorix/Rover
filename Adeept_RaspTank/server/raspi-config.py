@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # File name   : server.py
-# Description : The main program server takes control of Ultrasonic,Motor,Servo by receiving the order from the client through TCP and carrying out the corresponding operation.
+# Description : The main program server takes control of Ultrasonic,Motor,Servo by receiving the order from the controller through TCP and carrying out the corresponding operation.
 # Website     : www.adeept.com
 # E-mail      : support@adeept.com
 # Author      : William
@@ -500,7 +500,7 @@ if __name__ == '__main__':
     tcpSerSock.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
     tcpSerSock.bind(ADDR)
     tcpSerSock.listen(5)
-                          #Start server,waiting for client
+                          #Start server,waiting for controller
     try:
         run()
 

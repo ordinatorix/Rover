@@ -1,11 +1,14 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-# File name   : client.py
-# Description : client  
+# File name   : controller.py
+# Description : Controller PC  
 # Website     : www.adeept.com
 # E-mail      : support@adeept.com
 # Author      : William
 # Date        : 2018/08/22
+# Modified    : seb3n
+# Mod date    : 2021/08/15
+
 from socket import *
 import time
 import threading as thread
@@ -44,10 +47,10 @@ def num_import(initial):            #Call this function to import data from '.tx
     n=snum
     return n    
 
-def call_forward(event):         #When this function is called,client commands the car to move forward
+def call_forward(event):         #When this function is called, controller commands the car to move forward
     tcpClicSock.send(('add').encode())
 
-def call_back(event):            #When this function is called,client commands the car to move backward
+def call_back(event):            #When this function is called, controller commands the car to move backward
     tcpClicSock.send(('sub').encode())
 
 def normal_state():

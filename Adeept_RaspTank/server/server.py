@@ -95,7 +95,7 @@ def info_get():
         time.sleep(3)
 
 
-def info_send_client():
+def info_send_controller():
     SERVER_IP = addr[0]
     SERVER_PORT = 2256   #Define port serial 
     SERVER_ADDR = (SERVER_IP, SERVER_PORT)
@@ -110,7 +110,7 @@ def info_send_client():
             pass
 
 
-def ultra_send_client():
+def ultra_send_controller():
     ultra_IP = addr[0]
     ultra_PORT = 2257   #Define port serial 
     ultra_ADDR = (ultra_IP, ultra_PORT)
@@ -145,11 +145,11 @@ def run():
     move.setup()
     findline.setup()
 
-    info_threading=threading.Thread(target=info_send_client)    #Define a thread for FPV and OpenCV
+    info_threading=threading.Thread(target=info_send_controller)    #Define a thread for FPV and OpenCV
     info_threading.setDaemon(True)                             #'True' means it is a front thread,it would close when the mainloop() closes
     info_threading.start()                                     #Thread starts
 
-    ultra_threading=threading.Thread(target=ultra_send_client)    #Define a thread for FPV and OpenCV
+    ultra_threading=threading.Thread(target=ultra_send_controller)    #Define a thread for FPV and OpenCV
     ultra_threading.setDaemon(True)                             #'True' means it is a front thread,it would close when the mainloop() closes
     ultra_threading.start()                                     #Thread starts
 
@@ -334,7 +334,7 @@ if __name__ == '__main__':
             tcpSerSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             tcpSerSock.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
             tcpSerSock.bind(ADDR)
-            tcpSerSock.listen(5)                      #Start server,waiting for client
+            tcpSerSock.listen(5)                      #Start server,waiting for controller
             print('waiting for connection...')
             tcpCliSock, addr = tcpSerSock.accept()
             print('...connected from :', addr)

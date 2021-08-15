@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-# File name   : client.py
-# Description : client  
+# File name   : controller.py
+# Description : controller  
 # Website     : www.adeept.com
 # E-mail      : support@adeept.com
 # Author      : William
@@ -118,28 +118,28 @@ def num_import(initial):            #Call this function to import data from '.tx
     return n    
 
 
-def call_forward(event):         #When this function is called,client commands the car to move forward
+def call_forward(event):         #When this function is called,controller commands the car to move forward
     global c_f_stu
     if c_f_stu == 0:
         tcpClicSock.send(('forward').encode())
         c_f_stu=1
 
 
-def call_back(event):            #When this function is called,client commands the car to move backward
+def call_back(event):            #When this function is called,controller commands the car to move backward
     global c_b_stu 
     if c_b_stu == 0:
         tcpClicSock.send(('backward').encode())
         c_b_stu=1
 
 
-def call_FB_stop(event):            #When this function is called,client commands the car to stop moving
+def call_FB_stop(event):            #When this function is called,controller commands the car to stop moving
     global c_f_stu,c_b_stu,c_l_stu,c_r_stu,c_ls_stu,c_rs_stu
     c_f_stu=0
     c_b_stu=0
     tcpClicSock.send(('DS').encode())
 
 
-def call_Turn_stop(event):            #When this function is called,client commands the car to stop moving
+def call_Turn_stop(event):            #When this function is called,controller commands the car to stop moving
     global c_f_stu,c_b_stu,c_l_stu,c_r_stu,c_ls_stu,c_rs_stu
     c_l_stu=0
     c_r_stu=0
@@ -148,14 +148,14 @@ def call_Turn_stop(event):            #When this function is called,client comma
     tcpClicSock.send(('TS').encode())
 
 
-def call_Left(event):            #When this function is called,client commands the car to turn left
+def call_Left(event):            #When this function is called,controller commands the car to turn left
     global c_l_stu
     if c_l_stu == 0:
         tcpClicSock.send(('left').encode())
         c_l_stu=1
 
 
-def call_Right(event):           #When this function is called,client commands the car to turn right
+def call_Right(event):           #When this function is called,controller commands the car to turn right
     global c_r_stu
     if c_r_stu == 0:
         tcpClicSock.send(('right').encode())
@@ -312,7 +312,7 @@ def Info_receive():
     InfoSock = socket(AF_INET, SOCK_STREAM)
     InfoSock.setsockopt(SOL_SOCKET,SO_REUSEADDR,1)
     InfoSock.bind(ADDR)
-    InfoSock.listen(5)                      #Start server,waiting for client
+    InfoSock.listen(5)                      #Start server,waiting for controller
     InfoSock, addr = InfoSock.accept()
     print('Info connected')
     while 1:
@@ -337,7 +337,7 @@ def ultra_receive():
     ultra_Sock = socket(AF_INET, SOCK_STREAM)
     ultra_Sock.setsockopt(SOL_SOCKET,SO_REUSEADDR,1)
     ultra_Sock.bind(ultra_ADDR)
-    ultra_Sock.listen(5)                      #Start server,waiting for client
+    ultra_Sock.listen(5)                      #Start server,waiting for controller
     ultra_Sock, addr = ultra_Sock.accept()
     canvas_text=canvas_ultra.create_text((90,11),text='Ultrasonic OFF',fill=color_text)
     while 1:
