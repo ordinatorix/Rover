@@ -29,10 +29,12 @@
 
 ## Quick start
 
-To get started, you will need a raspberry pi 3b that will serve as your controller, and a second raspberry pi 3b mounted on Rover. Clone this repo and run the install script on both the controller and Rover.
+To get started, you will need a raspberry pi 3b that will serve as your controller, and a second raspberry pi 3b mounted on Rover. You will want a desktop img on your controller and a CLI on Rover.
 
+-  [Clone this repo](https://github.com/seb3n/Rover.git) and run the respective install script on both the controller and Rover.
 
 - If installing this on a new machine, make sure the machine has python3 at the latest verion.
+
 
 - activate i2c using sudo raspi-config command => peripherals
 
@@ -48,6 +50,29 @@ To get started, you will need a raspberry pi 3b that will serve as your controll
 * Forward distance measurement.
 * Claw manupulation.
 * Motion using tank tracks.
+
+## Controller setup
+
+Once the Repo is cloned on your device, you should be able to run 
+
+``` 
+$ python3 /home/pi/Rover/Controller/RaspTankTest.py
+``` 
+<br> This should display a GUI on your controller.
+
+Now lets install OpenCV and other dependencies so that we can receive the camera stream from Rover.
+
+on your controller, run the following commands:
+```
+$ cd
+$ cd Rover/Controller
+$ sudo python3 controller_setup.py
+```
+
+
+## Rover setup
+
+run the install script
 
 ## Bugs and feature requests
 
