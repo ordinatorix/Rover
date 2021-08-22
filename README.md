@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://rover.io/">
-    <img src="rover_logo1.png" alt="Logo" width=272 height=102>
+  <a href="https://github.com/seb3n/Rover">
+    <img src="images/rover.png" alt="Logo">
   </a>
 
   <h3 align="center">Rover Tank</h3>
@@ -19,39 +19,45 @@
 
 ## Table of contents
 
-- [Quick start](#quick-start)
-- [What's included](#whats-included)
-- [Bugs and feature requests](#bugs-and-feature-requests)
+- [What's Included](#whats-included)
+- [Getting Started](#getting-started)
+- [Controller Setup](#controller-setup)
+- [Rover Setup](#rover-setup)
+- [Bugs and Feature Requests](#bugs-and-feature-requests)
 - [Contributing](#contributing)
 - [Creators](#creators)
 - [Thanks](#thanks)
 - [Copyright and license](#copyright-and-license)
 
-## Quick start
 
-To get started, you will need a raspberry pi 3b that will serve as your controller, and a second raspberry pi 3b mounted on Rover. You will want a desktop img on your controller and a CLI on Rover.
-
--  [Clone this repo](https://github.com/seb3n/Rover.git) and run the respective install script on both the controller and Rover.
-
-- If installing this on a new machine, make sure the machine has python3 at the latest verion.
-
-
-- activate i2c using sudo raspi-config command => peripherals
-
-- your root folder should look like the following on the rover: /home/pi/development/Rover/
-
-- When testing the install, make sure it is done on the rover, as you will get an error from not having any sensors connected.
-
-- Once tested without openCV, you can install opencv on a pytho-env 
-
-## What's included
+## What's Included
 
 * OpenCV tracking.
 * Forward distance measurement.
 * Claw manupulation.
 * Motion using tank tracks.
 
-## Controller setup
+## Getting Started
+
+To get started, you will need a raspberry pi with a desktop image(tested on the raspberry pi 3b) that will serve as your controller, and a second raspberry pi (CLI image) mounted on Rover (tested with pi 3b and 4).
+
+-  Clone [this](https://github.com/seb3n/Rover.git) repo to both controller and Rover.
+
+- If installing this on a new machine, make sure the machine has python3 at the latest verion.
+
+- Your root folder should look like the following: ```/home/pi/Rover/```
+<!-- 
+- At this point, you should be able to run the RaspTankTest.py on the controller using the following command: 
+```
+$ python3 /home/pi/Rover/Controller/RaspTankTest.py
+```
+-  This should display the GUI that will allow you interface with Rover.
+
+<!-- - When testing the install, make sure it is done on the rover, as you will get an error from not having any sensors connected. -->
+
+- Once tested without OpenCV, you can install OpenCV. -->
+
+## Controller Setup
 
 Once the Repo is cloned on your device, you should be able to run 
 
@@ -60,9 +66,10 @@ $ python3 /home/pi/Rover/Controller/RaspTankTest.py
 ``` 
 <br> This should display a GUI on your controller.
 
-Now lets install OpenCV and other dependencies so that we can receive the camera stream from Rover.
+<br>
+Now lets install OpenCV and other dependencies so that we can receive the camera stream and have access to other features on Rover.
 
-on your controller, run the following commands:
+In your controller terminal, run the following commands:
 ```
 $ cd
 $ cd Rover/Controller
@@ -70,15 +77,19 @@ $ sudo python3 controller_setup.py
 ```
 
 
-## Rover setup
+## Rover Setup
 
 run the install script
 
-## Bugs and feature requests
+## Bugs and Feature Requests
 
 Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/seb3n/Rover/master/CONTRIBUTING.md) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/seb3n/Rover/issues/new).
 
 ## Creators
+
+**ADEEPT**
+
+- <https://github.com/adeept>
 
 **SEB3N**
 
