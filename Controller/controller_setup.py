@@ -20,6 +20,7 @@ import time
 
 # update and upgrade;
 # remove extra software if any.
+print("###-------->Updating and packages and removing unnecessary ones<--------###")
 for x in range(1,4):
 	if os.system(" apt-get update") == 0:
 		break
@@ -34,7 +35,7 @@ for x in range(1,4):
 		break
 
 # install pip
-print('installing pip')
+print('###-------->Installing pip<--------###')
 for x in range(1,4):
 	if os.system("sudo apt-get install -y python3-pip") == 0:
 		break		
@@ -57,17 +58,17 @@ for x in range(1,4):
 # 	print('try again')
 
 # Update pip
-print("Updating pip")
+print("###--------->Updating pip<--------###")
 for x in range(1,4):
 	if os.system(" pip3 install -U pip") == 0:
 		break
 
-print("Installing numpy")
+print("###-------->Installing numpy<--------###")
 for x in range(1,4):
 	if os.system(" pip3 install numpy") == 0:
 		break
 
-print("Installing OpenCV")
+print("###-------->Installing OpenCV<--------###")
 for x in range(1,4):
 	if os.system(" apt-get install -y libopencv-dev python3-opencv") == 0:
 		break
@@ -101,7 +102,7 @@ for x in range(1,4):
 # 		break
 # '''
 
-print("Installing imutils; pyzmq; pybase64 & psutil")
+print("###-------->Installing imutils; pyzmq; pybase64 & psutil<--------###")
 for x in range(1,4):
 	if os.system(" pip3 install imutils pyzmq pybase64 psutil") == 0:   ####
 		break
@@ -130,6 +131,6 @@ for x in range(1,4):
 
 # os.system("sudo cp -f //home/pi/Documents/Rover/server/config.txt //etc/config.txt")
 # os.system("sudo cp -f //home/pi/Documents/Rover/server/config.txt //config.txt")
-print('restarting')
+print('###-------->Restarting<--------###')
 
 # os.system("sudo reboot")
