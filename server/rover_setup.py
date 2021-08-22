@@ -95,135 +95,6 @@ for x in range(1,4):
 	if os.system("sudo apt-get install -y libopencv-dev python3-opencv") == 0:
 		break
 
-
-
-# # Install some needed dev tools to help with OpenCV configurations.
-# print('###-------->Installing dev tools<--------###')
-# for x in range(1,4):
-# 	if os.system("sudo apt-get install -y build-essential cmake pkg-config") == 0:   ####
-# 		break
-
-# # Install image I/O packages.
-# print('###-------->Installing image I/O packages<--------###')
-# for x in range(1,4):
-# 	if os.system("sudo apt-get install -y libjpeg-dev libtiff-dev libjasper-dev libpng-dev") == 0:   ####
-# 		break
-
-# # Install some video I/O packages.
-# print('###-------->Installing video I/O packages<--------###')
-# for x in range(1,4):
-# 	if os.system("sudo apt-get install -y libavcodec-dev libavformat-dev libswscale-dev libv4l-dev") == 0:   ####
-# 		break
-
-# # Install more video I/O packages.
-# for x in range(1,4):
-# 	if os.system("sudo apt-get install -y libxvidcore-dev libx264-dev") == 0:   ####
-# 		break
-
-# # Install GTK development library.
-# print('###-------->Installing GTK dev library<--------###')
-# for x in range(1,4):
-# 	if os.system("sudo apt-get install -y libgtk-3-dev") == 0:   ####
-# 		break
-
-# # Install a package which may reduce pesky GTK warnings:
-# for x in range(1,4):
-# 	if os.system("sudo apt-get install -y libcanberra-gtk*") == 0:   ####
-# 		break
-
-# # Install numerical optimization packages
-# print('###-------->Installing numerical optimization packages<--------###')
-# for x in range(1,4):
-# 	if os.system("sudo apt-get install -y libatlas-base-dev gfortran") == 0:   ####
-# 		break
-
-# # Install python 3 development headers
-# print('###-------->Installing python3 dev headers<--------###')
-# for x in range(1,4):
-# 	if os.system("sudo apt-get install -y python3-dev") ==0:
-# 		break
-
-# # Navigate to home folder
-# print('###-------->Navigating to home folder<--------###')
-# for x in range(1,4):
-# 	if os.system("cd ~") ==0:
-# 		break
-
-# # Download OpenCV archives
-# print('###-------->Downloading OpenCV archives<--------###')
-# for x in range(1,4):
-# 	if os.system("wget -O opencv.zip https://github.com/opencv/opencv/archive/4.0.0.zip") ==0:
-# 		break
-
-
-# for x in range(1,4):
-# 	if os.system("wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.0.0.zip") ==0:
-# 		break
-
-# # Unzip archive downloaded
-# print('###-------->Unziping archive<--------###')
-# for x in range(1,4):
-# 	if os.system("unzip opencv.zip") ==0:
-# 		break
-
-# for x in range(1,4):
-# 	if os.system("unzip opencv_contrib.zip") ==0:
-# 		break
-
-# # Renaming directories
-# print('###-------->Renaming directories<--------###')
-# for x in range(1,4):
-# 	if os.system("mv opencv-4.0.0 opencv") ==0:
-# 		break
-
-# for x in range(1,4):
-# 	if os.system("mv opencv_contrib-4.0.0 opencv_contrib") ==0:
-# 		break
-
-
-# # Build OpenCV using CMake
-# print('###-------->Building OpenCV with CMake<--------###')
-# for x in range(1,4):
-# 	if os.system("cd ~/opencv") ==0:
-# 		break
-
-# for x in range(1,4):
-# 	if os.system("mkdir build") ==0:
-# 		break
-
-# for x in range(1,4):
-# 	if os.system("cd build") ==0:
-# 		break
-
-# for x in range(1,4):
-# 	if os.system("cmake -D CMAKE_BUILD_TYPE=RELEASE \
-#     -D CMAKE_INSTALL_PREFIX=/usr/local \
-#     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
-#     -D ENABLE_NEON=ON \
-#     -D ENABLE_VFPV3=ON \
-#     -D BUILD_TESTS=OFF \
-#     -D OPENCV_ENABLE_NONFREE=ON \
-#     -D INSTALL_PYTHON_EXAMPLES=OFF \
-#     -D BUILD_EXAMPLES=OFF ..") ==0:
-# 		break
-
-
-
-
-	
-# for x in range(1,4):
-# 	if os.system("sudo apt-get install -y libqtgui4 python3-pyqt5 libqt4-test") == 0:
-# 		break
-
-# for x in range(1,4):
-# 	if os.system("sudo apt-get install -y libhdf5-dev") == 0:   ####
-# 		break
-
-# for x in range(1,4):
-# 	if os.system("sudo apt-get install -y libhdf5-serial-dev") == 0:   ####
-# 		break
-
-
 # install imutil, zmq, pybase64, psutil
 print('###-------->Installing imutils; zmq; pybase64; psutil<--------###')
 for x in range(1,4):
@@ -255,15 +126,6 @@ for x in range(1,4):
 	if os.system("sudo apt-get install -y util-linux procps hostapd iproute2 iw haveged dnsmasq") == 0:
 		break
 
-# '''
-# try:
-# 	os.system('sudo mkdir //home/pi/.config/autostart')
-# 	os.system('sudo touch //home/pi/.config/autostart/car.desktop')
-# 	with open("//home/pi/.config/autostart/car.desktop",'w') as file_to_write:
-# 		file_to_write.write("[Desktop Entry]\n   Name=Car\n   Comment=Car\n   Exec=sudo python3 //home/pi/Rover/server/server.py\n   Icon=false\n   Terminal=false\n   MutipleArgs=false\n   Type=Application\n   Catagories=Application;Development;\n   StartupNotify=true")
-# except:
-# 	pass
-# '''
 
 # Create startup file.
 # This file will be run on startup and have Rover awaiting connection.
@@ -280,7 +142,6 @@ replace_num('/etc/rc.local','fi','fi\n//home/pi/startup.sh start')
 
 os.system("sudo cp -f //home/pi/Rover/server/config.txt //home/pi/config.txt")
 
-os.system("sudo cp -f //home/pi/Rover/server/config.txt //etc/config.txt")
 os.system("sudo cp -f //home/pi/Rover/server/config.txt //config.txt")
 
 # Rebooting after install is complete
