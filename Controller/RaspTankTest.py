@@ -6,6 +6,7 @@
 # Editor      : Seb3n
 # Date        : 2021/08/15
 
+# TODO: add disconnnect button
 from socket import *
 import sys
 import time
@@ -400,12 +401,12 @@ def loop():                      #GUI
         target_color='#FF6D00'
 
         root = tk.Tk()            #Define a window named root
-        root.title('Adeept RaspTank')      #Main window title
+        root.title('Test Cockpit')      #Main window title
         root.geometry('565x510')  #Main window size, middle of the English letter x.
         root.config(bg=color_bg)  #Set the background color of root window
 
         try:
-            logo =tk.PhotoImage(file = 'logo.png')         #Define the picture of logo,but only supports '.png' and '.gif'
+            logo =tk.PhotoImage(file = '../images/rover.png')         #Define the picture of logo,but only supports '.png' and '.gif'
             l_logo=tk.Label(root,image = logo,bg=color_bg) #Set a label to show the logo picture
             l_logo.place(x=30,y=13)                        #Place the Label in a right position
         except:

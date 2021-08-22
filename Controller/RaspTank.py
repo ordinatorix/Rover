@@ -6,9 +6,11 @@
 # E-mail      : support@adeept.com
 # Author      : William
 # Date        : 2018/08/22
-# 
 
-# TODO: use relative imports
+# TODO: add disconnnect button to UI
+# TODO: add Rover shutdown button to UI
+
+# TODO: use relative imports for ip.txt to avoid having to be in the controller dir
 import cv2
 import zmq
 import base64
@@ -473,12 +475,12 @@ def loop():                      #GUI
         target_color='#FF6D00'
 
         root = tk.Tk()            #Define a window named root
-        root.title('Adeept RaspTank')      #Main window title
+        root.title('Rover Cockpit')      #Main window title
         root.geometry('565x510')  #Main window size, middle of the English letter x.
         root.config(bg=color_bg)  #Set the background color of root window
 
         try:
-            logo =tk.PhotoImage(file = 'logo.png')         #Define the picture of logo,but only supports '.png' and '.gif'
+            logo =tk.PhotoImage(file = '../images/rover.png')         #Define the picture of logo,but only supports '.png' and '.gif'
             l_logo=tk.Label(root,image = logo,bg=color_bg) #Set a label to show the logo picture
             l_logo.place(x=30,y=13)                        #Place the Label in a right position
         except:

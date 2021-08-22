@@ -5,7 +5,9 @@
 # E-mail      : support@adeept.com
 # Author      : William
 # Date        : 2018/08/22
-#scp ../server/server.py pi@192.168.0.13:/home/pi/server/server.py
+
+#TODO: improve keyboard interupt action
+
 
 import socket
 import time

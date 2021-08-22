@@ -6,6 +6,7 @@
 # Author      : William
 # Date        : 2018/08/22
 
+# TODO: improve keyboard interupt response
 import socket
 import time
 import threading
