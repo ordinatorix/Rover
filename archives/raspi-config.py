@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# File name   : server.py
+# File name   : raspi-config.py
 # Description : The main program server takes control of Ultrasonic,Motor,Servo by receiving the order from the controller through TCP and carrying out the corresponding operation.
 # Website     : www.adeept.com
 # E-mail      : support@adeept.com
@@ -19,17 +19,17 @@ def replace_num(initial,new_num):   #Call this function to replace data in '.txt
     global r
     newline=""
     str_num=str(new_num)
-    with open("config.txt","r") as f:
+    with open("$HOME/config.txt","r") as f:
         for line in f.readlines():
             if(line.find(initial) == 0):
                 line = initial+"%s" %(str_num+"\n")
             newline += line
-    with open("config.txt","w") as f:
+    with open("$HOME/config.txt","w") as f:
         f.writelines(newline)
 
 def num_import_int(initial):        #Call this function to import data from '.txt' file
     global r
-    with open("config.txt") as f:
+    with open("$HOME/config.txt") as f:
         for line in f.readlines():
             if(line.find(initial) == 0):
                 r=line
