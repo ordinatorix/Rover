@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # File name   : controller_setup.py
-# Description : install the software for controller 
+# Description : Install the software for controller 
 # Author      : seb3n
 # Date        : 2021/08/15
 
@@ -33,14 +33,6 @@ for x in range(1,4):
 	if os.system(" apt-get -y upgrade") == 0:
 		break
 
-# for x in range(1,4):
-# 	if os.system(" apt-get update") == 0:
-# 		break
-
-# for x in range(1,4):
-# 	if os.system(" apt-get upgrade") == 0:
-# 		break
-
 # install pip
 print('installing pip')
 for x in range(1,4):
@@ -59,10 +51,10 @@ for x in range(1,4):
 # 	if os.system(" pip3 install rpi_ws281x") == 0:
 # 		break
 
-try:
-	replace_num("/boot/config.txt",'#dtparam=i2c_arm=on','dtparam=i2c_arm=on\nstart_x=1\n')
-except:
-	print('try again')
+# try:
+# 	replace_num("/boot/config.txt",'#dtparam=i2c_arm=on','dtparam=i2c_arm=on\nstart_x=1\n')
+# except:
+# 	print('try again')
 
 # Update pip
 for x in range(1,4):
@@ -73,9 +65,9 @@ for x in range(1,4):
 	if os.system(" pip3 install numpy") == 0:
 		break
 
-# for x in range(1,4):
-# 	if os.system(" apt-get install -y libopencv-dev python3-opencv") == 0:
-# 		break
+for x in range(1,4):
+	if os.system(" apt-get install -y libopencv-dev python3-opencv") == 0:
+		break
 # '''
 # for x in range(1,4):
 # 	if os.system(" apt-get install -y libhdf5-dev") == 0:   ####
