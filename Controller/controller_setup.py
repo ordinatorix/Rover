@@ -7,16 +7,16 @@
 import os
 import time
 
-def replace_num(file,initial,new_num):  
-    newline=""
-    str_num=str(new_num)
-    with open(file,"r") as f:
-        for line in f.readlines():
-            if(line.find(initial) == 0):
-                line = (str_num+'\n')
-            newline += line
-    with open(file,"w") as f:
-        f.writelines(newline)
+# def replace_num(file,initial,new_num):  
+#     newline=""
+#     str_num=str(new_num)
+#     with open(file,"r") as f:
+#         for line in f.readlines():
+#             if(line.find(initial) == 0):
+#                 line = (str_num+'\n')
+#             newline += line
+#     with open(file,"w") as f:
+#         f.writelines(newline)
 
 # update and upgrade;
 # remove extra software if any.
@@ -57,14 +57,17 @@ for x in range(1,4):
 # 	print('try again')
 
 # Update pip
+print("Updating pip")
 for x in range(1,4):
 	if os.system(" pip3 install -U pip") == 0:
 		break
 
+print("Installing numpy")
 for x in range(1,4):
 	if os.system(" pip3 install numpy") == 0:
 		break
 
+print("Installing OpenCV")
 for x in range(1,4):
 	if os.system(" apt-get install -y libopencv-dev python3-opencv") == 0:
 		break
@@ -97,33 +100,36 @@ for x in range(1,4):
 # 	if os.system(" apt-get install -y libqtgui4 python3-pyqt5 libqt4-test") == 0:
 # 		break
 # '''
+
+print("Installing imutils; pyzmq; pybase64 & psutil")
 for x in range(1,4):
 	if os.system(" pip3 install imutils pyzmq pybase64 psutil") == 0:   ####
 		break
 
-for x in range(1,4):
-	if os.system("git clone https://github.com/oblique/create_ap") == 0:
-		break
+# print("Creating ")
+# for x in range(1,4):
+# 	if os.system("git clone https://github.com/oblique/create_ap") == 0:
+# 		break
 
-try:
-	os.system("cd //home/pi/Documents/Rover/create_ap &&  make install")
-except:
-	pass
+# try:
+# 	os.system("cd //home/pi/Documents/Rover/create_ap &&  make install")
+# except:
+# 	pass
 
-try:
-	os.system("cd //home/pi/create_ap &&  make install")
-except:
-	pass
+# try:
+# 	os.system("cd //home/pi/create_ap &&  make install")
+# except:
+# 	pass
 
-for x in range(1,4):
-	if os.system(" sudo apt-get install -y util-linux procps hostapd iproute2 iw haveged dnsmasq") == 0:
-		break
+# for x in range(1,4):
+# 	if os.system(" sudo apt-get install -y util-linux procps hostapd iproute2 iw haveged dnsmasq") == 0:
+# 		break
 
 
-os.system("sudo cp -f //home/pi/Documents/Rover/server/config.txt //home/pi/config.txt")
+# os.system("sudo cp -f //home/pi/Documents/Rover/server/config.txt //home/pi/config.txt")
 
-os.system("sudo cp -f //home/pi/Documents/Rover/server/config.txt //etc/config.txt")
-os.system("sudo cp -f //home/pi/Documents/Rover/server/config.txt //config.txt")
+# os.system("sudo cp -f //home/pi/Documents/Rover/server/config.txt //etc/config.txt")
+# os.system("sudo cp -f //home/pi/Documents/Rover/server/config.txt //config.txt")
 print('restarting')
 
 # os.system("sudo reboot")
