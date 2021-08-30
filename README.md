@@ -50,11 +50,13 @@ To get started, you will need a raspberry pi with a desktop image(tested on the 
 $ sudo apt-get install python3
 ```
 
-- Assuming you clone the repo into your home directory, it should look like the following: ```/home/pi/Rover/```
+- Assuming you cloned the repo into your home directory, it should look like the following: ```/home/pi/Rover/``` on both devices.
+
+Once the Repo is cloned on your device, let's set them up. 
 
 ## Controller Setup
+First, let's test that the gui can run, using the following command:
 
-Once the Repo is cloned on your device, you should be able to run 
 ``` 
 $ python3 /home/pi/Rover/Controller/RaspTankTest.py
 ``` 
@@ -73,15 +75,21 @@ $ sudo python3 controller_setup.py
 Once the install is complete, reboot the contoller if it did not do so automatically.
 
 That should be it in terms of setting up the controller. Now let's configure Rover.
-<!-- TODO: add a shortcut to run the controller GUI -->
+<!-- TODO: add a desktop shortcut to run the controller GUI -->
 
 <br>
 
 ## Rover Setup
 
-Let's run the install script on Rover, just like we did on the controller.
+we'll run the rover install script, similarly to what we did on the controller.
+<br>Boot into your Rover and navigate into the directory where the install script is.
 ```
-$ cd Rover/server
+$ cd Rover/server/
+```
+
+now we can use python to run the install script.
+```
+sudo python3 rover_setup.py
 ```
 <!-- TODO: test and finish this. -->
 
